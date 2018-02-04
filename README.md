@@ -1,7 +1,7 @@
 # Willing.ly - URL Shortener (@1.0.0)
 Willing.ly is a simple RESTful API for generating and storing abbreviated URLs. URLs are stored via MongoDB server and accessible by each unique user. Once logged in, users may add, delete, update, and navigate their will.ing links.
 
-Willing.ly is built on Meteor. Follow the the instructions below to install Meteor:
+Willing.ly is built on Meteor. Follow the the instructions below to install Meteor (these instructions assume that you have Node.js and git installed on your machine):
 
 Windows:
 1. Install [7-Zip](http://www.7-zip.org/) or any other program that knows how to extract `tar.gz` files.
