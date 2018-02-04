@@ -15,4 +15,4 @@ Mac:
 Run the following command in your terminal to install the latest official Meteor release:
 `curl https://install.meteor.com/ | sh`
 
-**Note:** To start MongoDB server and run app, run `npm start`, then open `localhost:3000`.
+**Note:** To start MongoDB server and run app, run `npm install` follwed by `npm start`, then open `localhost:3000`.
