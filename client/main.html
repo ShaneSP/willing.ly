@@ -1,0 +1,61 @@
+<head>
+  <title>willing.ly</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+  <h1>Willing.ly</h1>
+  <div class="container">
+    {{> loginButtons}}
+    {{> urls}}
+  </div>
+</body>
+
+<template name="urls">
+    <h1>URL Shortener</h1>
+    <!-- willing.ly work here -->
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          {{#if currentUser}}
+          <form class="add-link">
+            <div class="form-group">
+              <label for="url">Enter URL Here:</label>
+              <input type="text" name="url" class="form-control" placeholder="">
+            </div> <!-- end .form-group -->
+            <div class="form-group">
+              <input type="submit" class="btn btn-success" value="Submit">
+            </div> <!-- end .form-group -->
+          </form>
+          {{else}}
+            <p>Please, willingly login before using URL shortener tool.</p>
+          {{/if}}
+          {{#if currentUser}}
+          <div>
+            <p>Below are your active willing.ly shortened URLs.</p>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Original</th>
+                  <th>Shortened</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <!-- populate with current URLs -->
+                  {{#each urls}}
+                  <tr>
+                    <td id="link">{{url}}</td>
+                    <td><a href="https://{{url}}" class="badge badge-primary">{{hash}}</a></td>
+                    <td><form class="edit-link"><input type="text" name="url" class="form-control" placeholder=""></form></td>
+                    <td class="delete-link"><a href="#" class="badge badge-danger">Delete</a></td>
+                  </tr>
+                  {{/each}}
+                
+              </tbody>
+            </table>
+  
+          </div>
+          {{/if}}
+        </div> <!-- end .col-xs-12 -->
+      </div> <!-- end .row -->
+</template>
